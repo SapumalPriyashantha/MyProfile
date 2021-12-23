@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_04</title>
+    <link href="assests/css/normalize.css" rel="stylesheet">
+    <style>
+        body > section {
+            width: 98vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        #firstSection > div:nth-child(1) {
+            background-color: red;
+        }
+
+        #firstSection > div:nth-child(2) {
+            background-color: whitesmoke;
+        }
+
+        #secondSection > div:nth-child(1) {
+            background-color: blue;
+        }
+
+        #secondSection > div:nth-child(2) {
+            background-color: cornflowerblue;
+        }
+
+        #thirdSection > div:nth-child(1) {
+            background-color: #231313;
+        }
+
+        #thirdSection > div:nth-child(2) {
+            background-color: gray;
+        }
+
+        #fourthSection > div:nth-child(1) {
+            background-color: brown;
+        }
+
+        #fourthSection > div:nth-child(2) {
+            background-color: orangered;
+        }
+
+        body > section > div:nth-child(1) {
+            width: 100%;
+            height: 58px;
+            position: sticky;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            z-index: 1;
+        }
+
+        body > section > div:nth-child(1) > h3 {
+            margin-left: 16px;
+            margin-top: 0px;
+            font-size: 25px;
+            padding-top: 14px;
+            color: white;
+        }
+
+        body > section > div:nth-child(2) {
+            height: 664px;
+            width: 100%;
+            position: absolute;
+            top: 58px;
+        }
+
+        body > section > div:nth-child(2) > p {
+            text-align: center;
+            font-size: 125px;
+            margin-top: 260px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<section id="firstSection">
+    <div>
+        <h3>Card 1</h3>
+    </div>
+    <div>
+        <p>Hello</p>
+    </div>
+</section>
+<section id="secondSection">
+    <div>
+        <h3>Card 2</h3>
+    </div>
+    <div>
+        <p>How</p>
+    </div>
+</section>
+<section id="thirdSection">
+    <div>
+        <h3>Card 3</h3>
+    </div>
+    <div>
+        <p>Are</p>
+    </div>
+</section>
+<section id="fourthSection">
+    <div>
+        <h3>Card 4</h3>
+    </div>
+    <div>
+        <p>You..?</p>
+    </div>
+</section>
+</body>
+</html>
