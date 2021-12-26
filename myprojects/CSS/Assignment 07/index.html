@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_07</title>
+    <link href="assests/css/normalize.css" rel="stylesheet">
+    <link href="assests/fonts/css/all.css" rel="stylesheet">
+    <style>
+        body > section {
+            width: 1527px;
+            height: 715px;
+            background-color: #2c2cd4;
+            position: relative;
+        }
+
+        body > section > div {
+            height: 300px;
+            width: 300px;
+            border: 20px solid white;
+            background-color: gray;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-top-color: red;
+            border-radius: 100%;
+            color: white;
+        }
+
+        body > section > div > h2 {
+            width: 110px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 37px;
+        }
+
+        body > section > div:hover {
+            transform: rotate(360deg);
+            cursor: pointer;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+
+        body > section > div:hover h2 {
+            transform: rotate(-360deg);
+            transition-property: all;
+            transition-duration: 2s;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>
+        <h2>RWAD</h2>
+    </div>
+</section>
+</body>
+</html>

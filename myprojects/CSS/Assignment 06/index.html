@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_06</title>
+    <link href="assests/css/normalize.css" rel="stylesheet">
+    <link href="assests/fonts/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+        }
+
+        section {
+            height: 331px;
+            width: 200px;
+            position: absolute;
+            right: 1490px;
+            top: 140px;
+        }
+
+        section > div {
+            height: 50px;
+            width: 200px;
+            position: absolute;
+            background-color: mediumpurple;
+            left: 0;
+            color: white;
+        }
+
+        section > div:nth-child(1) {
+            top: 0;
+        }
+
+        section > div:nth-child(2) {
+            top: 70px;
+        }
+
+        section > div:nth-child(3) {
+            top: 140px;
+        }
+
+        section > div:nth-child(4) {
+            top: 210px;
+        }
+
+        section > div:nth-child(5) {
+            top: 280px;
+        }
+
+        section > div > h3 {
+            padding-left: 20px;
+        }
+
+        section > div > h3 > i {
+            padding-left: 60px;
+        }
+
+        section > div:nth-child(3) > h3 > i {
+            padding-left: 49px;
+        }
+
+        section > div:hover {
+            left: 155px;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>
+        <h3>Menu One<i class="fas fa-home"></i></h3>
+    </div>
+    <div>
+        <h3>Menu Two<i class="fas fa-ambulance"></i></h3>
+    </div>
+    <div>
+        <h3>Menu Three<i class="fas fa-file-alt"></i></h3>
+    </div>
+    <div>
+        <h3>Menu Four<i class="fas fa-layer-group"></i></h3>
+    </div>
+    <div>
+        <h3>Menu Five<i class="fas fa-cart-plus"></i></h3>
+    </div>
+</section>
+</body>
+</html>
