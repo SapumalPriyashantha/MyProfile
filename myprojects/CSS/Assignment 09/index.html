@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_09</title>
+    <link href="assests/css/normalize.css" rel="stylesheet">
+    <style>
+        main {
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        main > section {
+            height: 100%;
+            width: 400%;
+            display: flex;
+            animation-name: silder;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            position: absolute;
+        }
+
+        @keyframes silder {
+            0%, 15% {
+                margin-left: -0px;
+            }
+            20%, 45% {
+                margin-left: -600px;
+            }
+            50%, 75% {
+                margin-left: -1200px;
+            }
+            85%, 100% {
+                margin-left: -1800px;
+            }
+
+        }
+
+        main > section > div {
+            width: 600px;
+        }
+
+        main > section > div > img {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+        <div>
+            <img alt="sample pic one" src="assests/img/animation_pic01.jpg">
+        </div>
+        <div>
+            <img alt="sample pic two" src="assests/img/animation_pic02.jpg">
+        </div>
+        <div>
+            <img alt="sample pic three" src="assests/img/animation_pic03.jpg">
+        </div>
+        <div>
+            <img alt="sample pic four" src="assests/img/animation_pic04.jpg">
+        </div>
+    </section>
+</main>
+</body>
+</html>
