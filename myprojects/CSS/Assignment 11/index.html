@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_11</title>
+    <link href="assests/css/normalize.css" rel="stylesheet">
+    <style>
+        section {
+            height: 100vh;
+            width: 100%;
+            background-image: url("assests/img/sky.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        section > div.road {
+            height: 200px;
+            width: 500%;
+            background-image: url("assests/img/road.jpg");
+            position: absolute;
+            bottom: 0;
+            animation: road 20s linear infinite;
+        }
+
+        @keyframes road {
+            20% {
+                transform: translateX(-400px);
+            }
+            60% {
+                transform: translateX(-3000px);
+            }
+            80% {
+                transform: translateX(-3300px);
+            }
+            90% {
+                transform: translateX(-3400px);
+            }
+            100% {
+                transform: translateX(-3400px);
+            }
+        }
+
+        section > div.city {
+            height: 250px;
+            width: 500%;
+            background-image: url("assests/img/city.png");
+            position: absolute;
+            bottom: 200px;
+            animation: city 20s linear infinite;
+        }
+
+        @keyframes city {
+            20% {
+                transform: translateX(-200px);
+            }
+            60% {
+                transform: translateX(-1200px);
+            }
+            80% {
+                transform: translateX(-1350px);
+            }
+            90% {
+                transform: translateX(-1401px);
+            }
+            100% {
+                transform: translateX(-1401px);
+            }
+        }
+
+        section > div.car {
+            width: 400px;
+            height: 180px;
+            left: 38%;
+            bottom: 100px;
+            position: absolute;
+        }
+
+        section > div.car > img {
+            width: 100%;
+            height: 100%;
+        }
+
+        section > div.wheel {
+            left: 50%;
+            bottom: 170px;
+            position: absolute;
+        }
+
+        section > div.wheel > img {
+            width: 80px;
+            height: 80px;
+            animation: wheel 20s linear infinite;
+        }
+
+        section > div.wheel > img.back_wheel {
+            right: 72px;
+            top: -15px;
+            position: absolute;
+        }
+
+        section > div.wheel > img.front_wheel {
+            left: 91px;
+            top: -15px;
+            position: absolute;
+        }
+
+        @keyframes wheel {
+            20% {
+                transform: rotate(180deg);
+            }
+            60% {
+                transform: rotate(5000deg);
+            }
+            80% {
+                transform: rotate(5150deg);
+            }
+            90% {
+                transform: rotate(5200deg);
+            }
+            100% {
+                transform: rotate(5200deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="road"></div>
+    <div class="city"></div>
+    <div class="car">
+        <img alt="" src="assests/img/car.png">
+    </div>
+    <div class="wheel">
+        <img alt="back wheel" class="back_wheel" src="assests/img/wheel.png">
+        <img alt="front wheel" class="front_wheel" src="assests/img/wheel.png">
+    </div>
+</section>
+</body>
+</html>
