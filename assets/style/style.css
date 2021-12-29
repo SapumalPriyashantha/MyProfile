@@ -1,0 +1,45 @@
+body > header {
+    position: relative;
+    height: 80px;
+    background-color: #686161;
+    bottom: 24px;
+    box-shadow: -2px 9px 9px -4px #917a7a;
+}
+
+body > header > p {
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    padding-left: 35px;
+    padding-top: 24px;
+}
+
+body > header > nav > ul {
+    position: absolute;
+    right: 40px;
+    bottom: 5px;
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    list-style: none;
+    color: #4a3a3a;
+}
+
+body > header > nav > ul > li {
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+body > header > nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+body > header > nav > ul > li > a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+body > header > nav > ul > li > a:focus {
+    color: #ff0000;
+}
+
+
