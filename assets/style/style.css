@@ -1,16 +1,18 @@
+/*start header*/
 body > header {
-    position: relative;
+    position: fixed;
+    top: 0;
     height: 80px;
+    width: 100vw;
     background-color: #686161;
-    bottom: 24px;
     box-shadow: -2px 9px 9px -4px #917a7a;
+    z-index: 1;
 }
 
 body > header > p {
     font-size: 24px;
     font-family: 'Lobster', cursive;
-    padding-left: 35px;
-    padding-top: 24px;
+    padding-left: 175px;
 }
 
 body > header > nav > ul {
@@ -42,4 +44,106 @@ body > header > nav > ul > li > a:focus {
     color: #ff0000;
 }
 
+/*end header*/
 
+/*start main*/
+body > main {
+    position: relative;
+    bottom: 24px;
+    top: 80px;
+}
+
+/*start main first section*/
+body > main > section:nth-child(1) {
+    position: relative;
+    height: 700px;
+    background-color: #686161;
+    width: 100%;
+    height: 810px;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2) {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 245px;
+    margin-left: 175px;
+}
+
+body > main > section:nth-child(1) div:nth-child(2).Home > p {
+    font-family: 'Lobster', cursive;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > p:nth-child(1), p:nth-child(3) {
+    font-size: 30px;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > p:nth-child(2), p:nth-child(4) {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > div:nth-child(5) {
+    border: 2px solid black;
+    height: 50px;
+    width: 180px;
+    position: absolute;
+    top: 244px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: gray;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > div:nth-child(5) > p {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 40px;
+    width: 125px;
+    font-size: 35px;
+    color: white;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > p:nth-child(2):hover {
+    color: white;
+}
+
+body > main > section:nth-child(1) > div:nth-child(2).Home > p:nth-child(4):hover {
+    color: white;
+}
+
+body > main > section:nth-child(1) > div:nth-child(3) {
+    border: 1px solid blue;
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100px;
+    margin: auto;
+    border-radius: 100%;
+}
+
+body > main > section:nth-child(1) > div:nth-child(3) > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    color: #686161;
+}
+
+/*end main first section*/
+
+/*start main second section*/
+
+/*end main second section*/
+/*end main*/
