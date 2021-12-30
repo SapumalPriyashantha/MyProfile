@@ -135,10 +135,12 @@ body > main > section:nth-child(1) > div:nth-child(3) > img {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 0;
+    right: 0px;
+    left: -31px;
     margin: auto;
     color: #686161;
+    width: 550px;
+    height: 730px;
 }
 
 /*end main first section*/
