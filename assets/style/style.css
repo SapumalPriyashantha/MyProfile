@@ -53,10 +53,9 @@ body > main {
     top: 80px;
 }
 
-/*start main first section*/
+/*start main first section(Home)*/
 body > main > section:nth-child(1) {
     position: relative;
-    height: 700px;
     background-color: #686161;
     width: 100%;
     height: 810px;
@@ -136,16 +135,95 @@ body > main > section:nth-child(1) > div:nth-child(3) > img {
     top: 0;
     bottom: 0;
     right: 0px;
-    left: -31px;
+    left: -8px;
     margin: auto;
     color: #686161;
-    width: 550px;
+    width: 525px;
     height: 730px;
 }
 
 /*end main first section*/
 
-/*start main second section*/
-
+/*start main second section(About Me)*/
+body > main > section:nth-child(2){
+    /*border: 1px solid black;*/
+    position: relative;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 1000px;
+}
+body > main > section:nth-child(2)>h1:nth-child(2){
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    font-size: 39px;
+    font-family: 'Lobster', cursive;
+}
+body > main > section:nth-child(2)>h3:nth-child(3){
+    position: absolute;
+    top: 185px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    font-size: 22px;
+    font-family: 'Lobster', cursive;
+}
+body > main > section:nth-child(2)>div:nth-child(4){
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 180px;
+    left: 176px;
+}
+body > main > section:nth-child(2)>div:nth-child(4)>img{
+    height: 480px;
+    width: 412px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+body > main > section:nth-child(2)>nav:nth-child(5){
+    /*border: 1px solid green;*/
+    position: absolute;
+    top: 630px;
+    left: 216px;
+}
+body > main > section:nth-child(2)>nav:nth-child(5)>div>img{
+    /*border: 1px solid red;*/
+    margin-left: 17px;
+    margin-right: 12px;
+    height: 50px;
+    width: 50px;
+}
+body > main > section:nth-child(2)>div:nth-child(7){
+    /*border: 1px solid green;*/
+    position: absolute;
+    top: 300px;
+    left: 560px;
+}
+body > main > section:nth-child(2)>div:nth-child(7)>p{
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+}
+body > main > section:nth-child(2)>section:nth-child(8)>div{
+    border: 1px solid black;
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 220px;
+    left: 1200px;
+}
+body > main > section:nth-child(2)>section:nth-child(8)>div>p{
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+}
 /*end main second section*/
 /*end main*/
