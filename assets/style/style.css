@@ -827,17 +827,16 @@ body > main > section:nth-child(6) > h3:nth-child(3) {
     font-size: 22px;
     font-family: 'Lobster', cursive;
 }
-
 body > main > section:nth-child(6) > section:nth-child(4) {
     position: absolute;
     width: max-content;
     height: max-content;
     top: 220px;
-    left: 700px;
+    left: 685px;
 }
 
 body > main > section:nth-child(6) > section > div {
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Lobster', cursive;
 }
 
@@ -860,7 +859,7 @@ body > main > section:nth-child(6) > section > div:nth-child(1) > time:nth-child
 
 body > main > section:nth-child(6) > section > div:nth-child(2) {
     position: absolute;
-    top: 44px;
+    top: 60px;
     left: -12px;
 }
 
@@ -868,8 +867,8 @@ body > main > section:nth-child(6) > section:nth-child(5) {
     position: absolute;
     width: max-content;
     height: max-content;
-    top: 300px;
-    left: 700px;
+    top: 330px;
+    left: 685px;
 }
 
 body > main > section:nth-child(6) > section:nth-child(5) > div:nth-child(1) > p:nth-child(1) {
@@ -883,8 +882,8 @@ body > main > section:nth-child(6) > section:nth-child(6) {
     position: absolute;
     width: max-content;
     height: max-content;
-    top: 380px;
-    left: 700px;
+    top: 435px;
+    left: 685px;
 }
 
 body > main > section:nth-child(6) > section:nth-child(6) > div:nth-child(1) > p:nth-child(1) {
@@ -898,8 +897,8 @@ body > main > section:nth-child(6) > section:nth-child(7) {
     position: absolute;
     width: max-content;
     height: max-content;
-    top: 460px;
-    left: 700px;
+    top: 540px;
+    left: 685px;
 }
 
 body > main > section:nth-child(6) > section:nth-child(7) > div:nth-child(1) > p:nth-child(1) {
@@ -913,8 +912,8 @@ body > main > section:nth-child(6) > section:nth-child(8) {
     position: absolute;
     width: max-content;
     height: max-content;
-    top: 540px;
-    left: 700px;
+    top: 640px;
+    left: 685px;
 }
 
 body > main > section:nth-child(6) > section:nth-child(8) > div:nth-child(1) > p:nth-child(1) {
@@ -927,6 +926,81 @@ body > main > section:nth-child(6) > section:nth-child(8) > div:nth-child(1) > p
 /*end main sixth section*/
 
 /*start main seventh section(Contact)*/
+body > main > section:nth-child(7) {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 720px;
+    border: 1px solid black;
+}
 
+body > main > section:nth-child(7) > h1:nth-child(2) {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    font-size: 39px;
+    font-family: 'Lobster', cursive;
+}
+
+body > main > section:nth-child(7) > h3:nth-child(3) {
+    position: absolute;
+    top: 185px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    font-size: 22px;
+    font-family: 'Lobster', cursive;
+}
+body > main > section:nth-child(7) > section:nth-child(4){
+    position: absolute;
+    top: 250px;
+    left: 100px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(1){
+    border: 1px solid black;
+    position: relative;
+    width: 400px;
+    height: 110px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(1)>a{
+    position: absolute;
+    left: 110px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(1)>pre{
+    position: absolute;
+    right: 96px;
+    top: 10px;
+    font-size: 20px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(1)>img{
+    position: absolute;
+    left: 46px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(2){
+    border: 1px solid black;
+    position: relative;
+    width: 400px;
+    height: 110px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(2)>a{
+    position: absolute;
+    left: 110px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(2)>pre{
+    position: absolute;
+    right: 96px;
+    top: 10px;
+    font-size: 20px;
+}
+body > main > section:nth-child(7) > section:nth-child(4)>div:nth-child(2)>img{
+    position: absolute;
+    left: 46px;
+}
 /*end main seventh section*/
 /*end main*/
