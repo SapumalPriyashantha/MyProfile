@@ -5,14 +5,17 @@
 
 ---
 ### Details included
--- About me <br/>
--- My services <br/>
--- My skills <br/>
--- Projects <br/>
--- Assignments <br/>
--- Education <br/>
--- Contact <br/>
--- Footer <br/>
+1 URl<br/>
+2 Project Information<br/>
+- About me <br/>
+- My services <br/>
+- My skills <br/>
+- Projects <br/>
+- Assignments <br/>
+- Education <br/>
+- Contact <br/>
+- Footer <br/> 
+3 Tools and Languages
 ---
 
 ### 📺 URL
@@ -28,21 +31,21 @@
 ---
 
 ### 📕 Project Information
-#####Home
+###Home
 ![Image of Home](assets/website%20screen%20shots/HeaderAndHome.PNG)
-#####About me
+###About me
 ![Image of AboutMe](assets/website%20screen%20shots/AboutMe.PNG)
-#####My services
+###My services
 ![Image of MyServices](assets/website%20screen%20shots/Services.PNG)
-#####My skill
+###My skill
 ![Image of MySkill](assets/website%20screen%20shots/Skill.PNG)
-#####Projects
+###Projects
 ![Image of Projects](assets/website%20screen%20shots/Project.PNG)
-#####Education
+###Education
 ![Image of Projects](assets/website%20screen%20shots/Education.PNG)
-#####Contact
+###Contact
 ![Image of Projects](assets/website%20screen%20shots/Contact.PNG)
-#####Footer
+###Footer
 ![Image of Projects](assets/website%20screen%20shots/footer.PNG)
 <br />
 <br />
