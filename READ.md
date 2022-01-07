@@ -36,35 +36,39 @@ Home
 
 ![Image of Home](assets/website%20screen%20shots/HeaderAndHome.PNG)
 <br/>
-
+<br/>
 About me
 
 ![Image of AboutMe](assets/website%20screen%20shots/AboutMe.PNG)
 <br/>
-
+<br/>
 My services
 
 ![Image of MyServices](assets/website%20screen%20shots/Services.PNG)
 <br/>
-
+<br/>
 My skill
 
 ![Image of MySkill](assets/website%20screen%20shots/Skill.PNG)
 <br/>
-
+<br/>
 Projects
+
 ![Image of Projects](assets/website%20screen%20shots/Project.PNG)
 <br/>
+<br/>
+Education
 
-#Education
 ![Image of Projects](assets/website%20screen%20shots/Education.PNG)
 <br/>
-
+<br/>
 Contact
+
 ![Image of Projects](assets/website%20screen%20shots/Contact.PNG)
 <br/>
-
+<br/>
 Footer
+
 ![Image of Projects](assets/website%20screen%20shots/footer.PNG)
 <br />
 <br />
