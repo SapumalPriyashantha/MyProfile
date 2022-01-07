@@ -32,39 +32,39 @@
 
 ### 📕 Project Information
 
-###Home
+Home
 
 ![Image of Home](assets/website%20screen%20shots/HeaderAndHome.PNG)
 <br/>
 
-###About me
+About me
 
 ![Image of AboutMe](assets/website%20screen%20shots/AboutMe.PNG)
 <br/>
 
-###My services
+My services
 
 ![Image of MyServices](assets/website%20screen%20shots/Services.PNG)
 <br/>
 
-###My skill
+My skill
 
 ![Image of MySkill](assets/website%20screen%20shots/Skill.PNG)
 <br/>
 
-###Projects
+Projects
 ![Image of Projects](assets/website%20screen%20shots/Project.PNG)
 <br/>
 
-###Education
+#Education
 ![Image of Projects](assets/website%20screen%20shots/Education.PNG)
 <br/>
 
-###Contact
+Contact
 ![Image of Projects](assets/website%20screen%20shots/Contact.PNG)
 <br/>
 
-###Footer
+Footer
 ![Image of Projects](assets/website%20screen%20shots/footer.PNG)
 <br />
 <br />
