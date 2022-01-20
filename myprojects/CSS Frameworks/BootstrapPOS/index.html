@@ -6,14 +6,20 @@
     <link href="assests/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
+        main {
+            position: absolute;
+            top: 60px;
+        }
+
         main > section {
             border: 1px solid black;
+            /*height: 100px;*/
         }
     </style>
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-light  fixed-top shadow " style="background-color: #f8feff;" >
+    <nav class="navbar navbar-light  fixed-top shadow " style="background-color: #f8feff;">
         <div class="container-fluid ">
             <a class="navbar-brand">
                 <img alt="shop icon" height="24" src="assests/img/shop.png" width="30">
@@ -48,20 +54,94 @@
         </div>
     </nav>
 </header>
-<main>
-    <section>
+<main class="container-fluid">
+    <section class="row" >
         <dfn id="one"></dfn>
-        <img alt="..." class="img-fluid" src="assests/img/car.png">
+        <!--        <img alt="..." class="img-fluid" src="assests/img/car.png">-->
+        <div class="col-4">
+            <div>
+                <h3 class="fw-bold fst-italic">Customer Save</h3>
+                <form>
+                    <div>
+                        <label class="form-label" for="exampleInputCustomerId_1">Customer Id</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputCustomerId_1"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputCustomerName_1">Customer Name</label>
+                        <input class="form-control" id="exampleInputCustomerName_1" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputCustomerAddress_1">Customer Address</label>
+                        <input class="form-control" id="exampleInputCustomerAddress_1" type="password">
+                    </div>
+                    <button class="btn btn-primary mt-2" type="submit">Save</button>
+                </form>
+            </div>
+            <div class="mt-3">
+                <h3 class="fw-bold fst-italic">Customer Search/ Update /Delete</h3>
+                <form>
+                    <div class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label" for="exampleInputCustomerId_2">Customer Id</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputCustomerId_2"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputCustomerName_2">Customer Name</label>
+                        <input class="form-control" id="exampleInputCustomerName_2" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputCustomerAddress_2">Customer Address</label>
+                        <input class="form-control" id="exampleInputCustomerAddress_2" type="password">
+                    </div>
+                    <button class="btn btn-warning mt-2" type="submit">Update</button>
+                    <button class="btn btn-danger mt-2" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <h3 class="fw-bold fst-italic">Customer Details</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Customer Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Customer address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>C-001</td>
+                    <td>Kamal Perera</td>
+                    <td>Kandy</td>
+                </tr>
+                <tr>
+                    <td>C-002</td>
+                    <td>Nimal Shantha</td>
+                    <td>Colombo</td>
+                </tr>
+                <tr>
+                    <td>C-003</td>
+                    <td>Anil Jayashantha</td>
+                    <td>Kelaniya</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
-    <section>
-        <dfn id="two"></dfn>
-        <img alt="..." class="img-fluid" src="assests/img/wheel.png">
+    <!--    <section class="row">-->
+    <!--        <dfn id="two"></dfn>-->
+    <!--        <img alt="..." class="img-fluid" src="assests/img/wheel.png">-->
 
-    </section>
-    <section>
-        <dfn id="three"></dfn>
-        <img alt="..." class="img-fluid" src="assests/img/city.png">
-    </section>
+    <!--    </section>-->
+    <!--    <section class="row">-->
+    <!--        <dfn id="three"></dfn>-->
+    <!--        <img alt="..." class="img-fluid" src="assests/img/city.png">-->
+    <!--    </section>-->
 </main>
 
 
