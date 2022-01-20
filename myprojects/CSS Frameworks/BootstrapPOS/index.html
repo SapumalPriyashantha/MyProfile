@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment_12_css framework</title>
+    <link href="assests/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        main > section {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light  fixed-top shadow " style="background-color: #f8feff;" >
+        <div class="container-fluid ">
+            <a class="navbar-brand">
+                <img alt="shop icon" height="24" src="assests/img/shop.png" width="30">
+                Nawaloka City
+            </a>
+            <button aria-controls="offcanvasNavbar" class="navbar-toggler" data-bs-target="#offcanvasNavbar"
+                    data-bs-toggle="offcanvas"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-end" id="offcanvasNavbar"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">portfolio</h5>
+                    <button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                        <li class="nav-item  ">
+                            <a aria-current="page" class="nav-link active" href="#one">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-current="page" class="nav-link active" href="#two">Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-current="page" class="nav-link active" href="#three">Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section>
+        <dfn id="one"></dfn>
+        <img alt="..." class="img-fluid" src="assests/img/car.png">
+    </section>
+    <section>
+        <dfn id="two"></dfn>
+        <img alt="..." class="img-fluid" src="assests/img/wheel.png">
+
+    </section>
+    <section>
+        <dfn id="three"></dfn>
+        <img alt="..." class="img-fluid" src="assests/img/city.png">
+    </section>
+</main>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assests/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
