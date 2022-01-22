@@ -8,7 +8,7 @@
     <style>
         main {
             position: absolute;
-            top: 60px;
+            top: 56px;
         }
 
         main > section {
@@ -55,9 +55,8 @@
     </nav>
 </header>
 <main class="container-fluid">
-    <section class="row" >
+    <section class="row">
         <dfn id="one"></dfn>
-        <!--        <img alt="..." class="img-fluid" src="assests/img/car.png">-->
         <div class="col-4">
             <div>
                 <h3 class="fw-bold fst-italic">Customer Save</h3>
@@ -82,7 +81,8 @@
                 <h3 class="fw-bold fst-italic">Customer Search/ Update /Delete</h3>
                 <form>
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Search Customer"
+                               type="search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
                     <div class="mt-2">
@@ -103,7 +103,7 @@
                 </form>
             </div>
         </div>
-        <div class="col">
+        <div class="col table-responsive">
             <h3 class="fw-bold fst-italic">Customer Details</h3>
             <table class="table table-hover">
                 <thead>
@@ -133,11 +133,96 @@
             </table>
         </div>
     </section>
-    <!--    <section class="row">-->
-    <!--        <dfn id="two"></dfn>-->
-    <!--        <img alt="..." class="img-fluid" src="assests/img/wheel.png">-->
-
-    <!--    </section>-->
+    <section class="row mt-4">
+        <dfn id="two"></dfn>
+        <div class="col-4">
+            <div>
+                <h3 class="fw-bold fst-italic">Item Save</h3>
+                <form>
+                    <div>
+                        <label class="form-label" for="exampleInputItemId_1">Item Id</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItemId_1"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemName_1">Item Name</label>
+                        <input class="form-control" id="exampleInputItemName_1" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemPrice_1">Item Price</label>
+                        <input class="form-control" id="exampleInputItemPrice_1" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemQuantity_1">Item Quantity</label>
+                        <input class="form-control" id="exampleInputItemQuantity_1" type="password">
+                    </div>
+                    <button class="btn btn-primary mt-2" type="submit">Save</button>
+                </form>
+            </div>
+            <div class="mt-3">
+                <h3 class="fw-bold fst-italic">Item Search/ Update /Delete</h3>
+                <form>
+                    <div class="d-flex">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Search Item"
+                               type="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label" for="exampleInputItemId_2">Item Id</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItemId_2"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemName_2">Item Name</label>
+                        <input class="form-control" id="exampleInputItemName_2" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemPrice_2">Item Price</label>
+                        <input class="form-control" id="exampleInputItemPrice_2" type="password">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItemQuantity_2">Item Quantity</label>
+                        <input class="form-control" id="exampleInputItemQuantity_2" type="password">
+                    </div>
+                    <button class="btn btn-warning mt-2" type="submit">Update</button>
+                    <button class="btn btn-danger mt-2" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+        <div class="col table-responsive">
+            <h3 class="fw-bold fst-italic">Item Details</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Item Id</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Item Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>I-001</td>
+                    <td>Soya meet</td>
+                    <td>Rs:200.00</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>I-002</td>
+                    <td>Milk powder</td>
+                    <td>Rs:750.00</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>I-003</td>
+                    <td>Milk made</td>
+                    <td>Rs:175.00</td>
+                    <td>50</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <!--    <section class="row">-->
     <!--        <dfn id="three"></dfn>-->
     <!--        <img alt="..." class="img-fluid" src="assests/img/city.png">-->
