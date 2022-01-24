@@ -223,10 +223,148 @@
             </table>
         </div>
     </section>
-    <!--    <section class="row">-->
-    <!--        <dfn id="three"></dfn>-->
-    <!--        <img alt="..." class="img-fluid" src="assests/img/city.png">-->
-    <!--    </section>-->
+    <section class="row mt-4">
+        <dfn id="three"></dfn>
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <h3 class="fw-bold fst-italic">Invoice Details</h3>
+                    <form>
+                        <div>
+                            <label class="form-label" for="exampleInputOrderID_1">Order Id</label>
+                            <input aria-describedby="emailHelp" class="form-control" id="exampleInputOrderID_1"
+                                   type="email">
+                        </div>
+                        <div>
+                            <label class="form-label" for="exampleInputOrder_Date">Order Date</label>
+                            <div class="md-form md-outline input-with-post-icon datepicker" id="date-picker-example">
+                                <input class="form-control" id="exampleInputOrder_Date" placeholder="Select date"
+                                       type="text">
+                                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Select Customer</label>
+                            <div class="dropdown">
+                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                        id="dropdownMenuButton1" type="button">
+                                    Select Customer
+                                </button>
+                                <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Kamal Perera</a></li>
+                                    <li><a class="dropdown-item" href="#">Nimal Shantha</a></li>
+                                    <li><a class="dropdown-item" href="#">Anil Jayashantha</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="exampleInputCustomerID">Customer Id</label>
+                            <input class="form-control" id="exampleInputCustomerID" type="password">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-4">
+                <h3 class="fw-bold fst-italic">Select Item</h3>
+                <form>
+                    <div>
+                        <label class="form-label">Select Item</label>
+                        <div class="dropdown">
+                            <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    id="dropdownMenuButton2" type="button">
+                                Select Item
+                            </button>
+                            <ul aria-labelledby="dropdownMenuButton2" class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Soya meet</a></li>
+                                <li><a class="dropdown-item" href="#">Milk powder</a></li>
+                                <li><a class="dropdown-item" href="#">Milk made</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItem_Id_1">Item Id</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Id_1"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItem_Price">Item Price</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Price"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputItem_QTyOnHand">QTY On Hand</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_QTyOnHand"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputOrder_QTy">Order QTY </label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputOrder_QTy"
+                               type="email">
+                    </div>
+                    <button class="btn btn-primary mt-2" type="submit">Add to Cart</button>
+                </form>
+            </div>
+            <div class="col mt-4">
+                <form>
+                    <div>
+                        <label class="form-label" for="exampleInputTotal_price">Total Price :</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputTotal_price"
+                               type="email">
+                    </div>
+                    <div>
+                        <label class="form-label" for="exampleInputCash">Cash :</label>
+                        <input class="form-control" id="exampleInputCash" type="password">
+                    </div>
+                    <button class="btn btn-primary mt-4" type="submit">Purchase</button>
+                    <div>
+                        <label class="form-label mt-4" for="exampleInputRemaining">Remaining :</label>
+                        <input class="form-control" id="exampleInputRemaining" type="password">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col table-responsive">
+                <h3 class="fw-bold fst-italic">Order Details</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>I-001</td>
+                        <td>Soya meet</td>
+                        <td>Rs:200.00</td>
+                        <td>2</td>
+                        <td>Rs:400.00</td>
+                    </tr>
+                    <tr>
+                        <td>I-002</td>
+                        <td>Milk powder</td>
+                        <td>Rs:750.00</td>
+                        <td>5</td>
+                        <td>3750.00</td>
+                    </tr>
+                    <tr>
+                        <td>I-003</td>
+                        <td>Milk made</td>
+                        <td>Rs:175.00</td>
+                        <td>3</td>
+                        <td>Rs:525.00</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </main>
 
 
