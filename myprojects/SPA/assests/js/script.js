@@ -14,8 +14,12 @@ $("#order").click(function () {
     $("#third_row").css("display", "block");
 })
 
+
+
+
 //customer
 $("#exampleInputCustomerId_1").keydown(function (event) {
+    $("#btn_custoomer_save").prop('disabled', true);
     if (event.key == "Shift") {
         $("#exampleInputCustomerName_1").focus();
     }
@@ -30,39 +34,53 @@ $("#exampleInputCustomerName_1").keydown(function (event) {
 $("#exampleInputCustomerAddress_1").keydown(function (event) {
     if (event.key == "Shift") {
 
+        //Disable previously tr binded function
+        $("#customer_Table>tr").off("click");
+
         $("#exampleInputCustomerId_1").focus();
 
-        let custId_2 = $("#exampleInputCustomerId_1").val(); //get first input field value
-        let custName_2 = $("#exampleInputCustomerName_1").val(); //get second input field value
-        let custAdress_2 = $("#exampleInputCustomerAddress_1").val(); //get third input field value
+        getCustomerDataAndSetRow();
 
-        let row_1 = "<tr><td>" + custId_2 + "</td><td>" + custName_2 + "</td><td>" + custAdress_2 + "</td></tr>";
+        clearCustomerInputFeild();
 
-        //set the row
-        $("#customer_Table").append(row_1);
+        clickCustomerTableRowAndGetdata();
 
-        //clear the previous text in input filed
-        $("#exampleInputCustomerId_1").val(" ");
-        $("#exampleInputCustomerName_1").val(" ");
-        $("#exampleInputCustomerAddress_1").val(" ");
+        // $("#btn_customer_update").click(function () {
+        //     $("#customer_Table>tr").off();
+        //     $("#customer_Table>tr").click(function () {
+        //         $(this).remove();
+        //         getCustomerDataAndSetRow();
+        //     });
+        // });
 
-        $("#customer_Table>tr").click(function () {
-
-            let custId_1 = $(this).children(":eq(0)").text(); // select first td and get text
-            let custName_1 = $(this).children(":eq(1)").text(); // select second td and get text
-            let custAdress_1 = $(this).children(":eq(2)").text(); // select third td and get text
-
-            // set values for the input fields
-            $("#exampleInputCustomerId_1").val(custId_1);
-            $("#exampleInputCustomerName_1").val(custName_1);
-            $("#exampleInputCustomerAddress_1").val(custAdress_1);
-        });
     }
 });
 
 $("#btn_custoomer_save").click(function () {
     //Disable previously tr binded function
     $("#customer_Table>tr").off("click");
+
+    $("#exampleInputCustomerId_1").focus();
+
+    getCustomerDataAndSetRow();
+
+    clearCustomerInputFeild();
+
+    clickCustomerTableRowAndGetdata();
+
+    // $("#btn_customer_update").click(function () {
+    //     $("#customer_Table>tr").off();
+    //     $("#customer_Table>tr").click(function () {
+    //         $(this).remove();
+    //         getCustomerDataAndSetRow();
+    //     });
+    // });
+
+});
+
+allCustomersValidation();
+
+function getCustomerDataAndSetRow() {
 
     let custId = $("#exampleInputCustomerId_1").val(); //get first input field value
     let custName = $("#exampleInputCustomerName_1").val(); //get second input field value
@@ -73,14 +91,18 @@ $("#btn_custoomer_save").click(function () {
     //set the row
     $("#customer_Table").append(row);
 
-    //focus first input field
-    $("#exampleInputCustomerId_1").focus();
+}
 
+function clearCustomerInputFeild() {
     //clear the previous text in input filed
-    $("#exampleInputCustomerId_1").val(" ");
-    $("#exampleInputCustomerName_1").val(" ");
-    $("#exampleInputCustomerAddress_1").val(" ");
+    $("#exampleInputCustomerId_1").val(null);
+    $("#exampleInputCustomerName_1").val(null);
+    $("#exampleInputCustomerAddress_1").val(null);
+}
 
+function clickCustomerTableRowAndGetdata() {
+
+    $("#customer_Table>tr").off();
 
     $("#customer_Table>tr").click(function () {
 
@@ -93,7 +115,58 @@ $("#btn_custoomer_save").click(function () {
         $("#exampleInputCustomerName_1").val(custName_1);
         $("#exampleInputCustomerAddress_1").val(custAdress_1);
     });
-});
+}
+
+function allCustomersValidation(){
+    $("#btn_custoomer_save").prop('disabled', true);
+
+    var regExCusID = /^(C-)[0-9]{3}$/;
+    var regExCusName = /^[A-z ]{3,20}$/;
+    var regExCusAddress = /^[A-z0-9/ ]{6,30}$/;
+
+    $("#exampleInputCustomerId_1").keyup(function () {
+        let input = $("#exampleInputCustomerId_1").val();
+        if (regExCusID.test(input)) {
+            $("#exampleInputCustomerId_1").css('border', '2px solid green');
+            $("#error_1").text("");
+        } else {
+            $("#exampleInputCustomerId_1").css('border', '2px solid red');
+            $("#error_1").text("Wrong format : C-001");
+        }
+    });
+    $("#exampleInputCustomerName_1").keyup(function () {
+        let input = $("#exampleInputCustomerName_1").val();
+        if (regExCusName.test(input)) {
+            $("#exampleInputCustomerName_1").css('border', '2px solid green');
+            $("#error_2").text("");
+        } else {
+            $("#exampleInputCustomerName_1").css('border', '2px solid red');
+            $("#error_2").text("Wrong format : Kamal Perera");
+        }
+    });
+    $("#exampleInputCustomerAddress_1").keyup(function () {
+        let input = $("#exampleInputCustomerAddress_1").val();
+        if (regExCusAddress.test(input)) {
+            $("#exampleInputCustomerAddress_1").css('border', '2px solid green');
+            $("#error_3").text("");
+            $("#btn_custoomer_save").prop('disabled', false);
+        } else {
+            $("#exampleInputCustomerAddress_1").css('border', '2px solid red');
+            $("#error_3").text("Wrong format : 2331/1B Colombo");
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 //item
 $("#exampleInputItemId_1").keydown(function (event) {
@@ -117,44 +190,33 @@ $("#exampleInputItemPrice_1").keydown(function (event) {
 $("#exampleInputItemQuantity_1").keydown(function (event) {
     if (event.key == "Shift") {
 
+        $("#item_Table>tr").off("click");
+        //focus first input field
         $("#exampleInputItemId_1").focus();
 
-        let itemID = $("#exampleInputItemId_1").val(); //get first input field value
-        let itemName = $("#exampleInputItemName_1").val(); //get second input field value
-        let itemPrice = $("#exampleInputItemPrice_1").val(); //get third input field value
-        let itemQuantity = $("#exampleInputItemQuantity_1").val(); //get fouth input field value
+        getItemDataAndSetRow();
 
-        let row_2 = "<tr><td>" + itemID + "</td><td>" + itemName + "</td><td>" + itemPrice + "</td><td>" + itemQuantity + "</td></tr>";
+        clearItemInputFeild();
 
-        //set the row
-        $("#item_Table").append(row_2);
-
-        //clear the previous text in input filed
-        $("#exampleInputItemId_1").val(" ");
-        $("#exampleInputItemName_1").val(" ");
-        $("#exampleInputItemPrice_1").val(" ");
-        $("#exampleInputItemQuantity_1").val(" ");
-
-        $("#item_Table>tr").click(function () {
-
-            let itemID_1 = $(this).children(":eq(0)").text(); // select first td and get text
-            let itemName_1 = $(this).children(":eq(1)").text(); // select second td and get text
-            let itemPrice_1 = $(this).children(":eq(2)").text(); // select third td and get text
-            let itemQuantity_1 = $(this).children(":eq(3)").text(); // select fourth td and get text
-
-            // set values for the input fields
-            $("#exampleInputItemId_1").val(itemID_1);
-            $("#exampleInputItemName_1").val(itemName_1);
-            $("#exampleInputItemPrice_1").val(itemPrice_1);
-            $("#exampleInputItemQuantity_1").val(itemQuantity_1);
-        });
+        clickItemTableRowAndGetdata();
     }
 });
 
 $("#btn_item_save").click(function () {
     //Disable previously tr binded function
     $("#item_Table>tr").off("click");
+    //focus first input field
+    $("#exampleInputItemId_1").focus();
 
+    getItemDataAndSetRow();
+
+    clearItemInputFeild();
+
+    clickItemTableRowAndGetdata();
+
+});
+
+function getItemDataAndSetRow() {
     let itemID_2 = $("#exampleInputItemId_1").val(); //get first input field value
     let itemName_2 = $("#exampleInputItemName_1").val(); //get second input field value
     let itemPrice_2 = $("#exampleInputItemPrice_1").val(); //get third input field value
@@ -164,17 +226,17 @@ $("#btn_item_save").click(function () {
 
     //set the row
     $("#item_Table").append(row_2);
+}
 
-    //focus first input field
-    $("#exampleInputItemId_1").focus();
-
+function clearItemInputFeild() {
     //clear the previous text in input filed
     $("#exampleInputItemId_1").val(" ");
     $("#exampleInputItemName_1").val(" ");
     $("#exampleInputItemPrice_1").val(" ");
     $("#exampleInputItemQuantity_1").val(" ");
+}
 
-
+function clickItemTableRowAndGetdata() {
     $("#item_Table>tr").click(function () {
 
         let itemID_1 = $(this).children(":eq(0)").text(); // select first td and get text
@@ -188,4 +250,4 @@ $("#btn_item_save").click(function () {
         $("#exampleInputItemPrice_1").val(itemPrice_1);
         $("#exampleInputItemQuantity_1").val(itemQuantity_1);
     });
-});
+}
