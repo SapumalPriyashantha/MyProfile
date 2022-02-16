@@ -1,0 +1,231 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#mainSec {
+    position: absolute;
+    width: 1400px;
+    height: 150px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: white;
+}
+
+#two, #three, #four, #five, #six, #seven {
+    position: relative;
+    width: 190px;
+    height: 120px;
+    display: inline-block;
+    top: 13px;
+    left: 15px;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#btnPlay {
+    position: relative;
+    left: 45px;
+    width: 60px;
+    height: 40px;
+    background-color: #3e9900;
+}
+
+#btnStop {
+    position: relative;
+    left: 50px;
+    width: 60px;
+    height: 40px;
+    background-color: #bf0639;
+}
+
+#two {
+    animation-name: two;
+}
+
+#three {
+    animation-name: three;
+}
+
+#four {
+    animation-name: four;
+}
+
+#five {
+    animation-name: five;
+}
+
+#six {
+    animation-name: six;
+}
+
+#seven {
+    animation-name: seven;
+}
+
+@keyframes two {
+    0% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+    20% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+    40% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+    60% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+    80% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+    100% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+}
+
+@keyframes three {
+    0% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+    20% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+    40% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+    60% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+    80% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+    100% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+}
+
+@keyframes four {
+    0% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+    20% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+    40% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+    60% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+    80% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+    100% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+}
+
+@keyframes five {
+    0% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+    20% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+    40% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+    60% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+    80% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+    100% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+}
+
+@keyframes six {
+    0% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+    20% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+    40% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+    60% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+    80% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+    100% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+}
+
+@keyframes seven {
+    0% {
+        background-color: #6d3300;
+        opacity: 1;
+    }
+    20% {
+        background-color: #984700;
+        opacity: 0.8;
+    }
+    40% {
+        background-color: #ce6100;
+        opacity: 0.6;
+    }
+    60% {
+        background-color: #ff8213;
+        opacity: 0.4;
+    }
+    80% {
+        background-color: #ffb06a;
+        opacity: 0.2;
+    }
+    100% {
+        background-color: #ffd8b5;
+        opacity: 0;
+    }
+}
