@@ -1,0 +1,204 @@
+body {
+    background-color: #364650;
+}
+
+body > #mainSec {
+    position: absolute;
+    width: 710px;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #364650;
+}
+
+hr {
+    color: white;
+}
+
+#lineOne {
+    position: relative;
+    top: calc(100% / 3);
+}
+
+#lineTwo {
+    position: relative;
+    top: calc((100% / 3) * 2);
+}
+
+#one, #two, #three, #four, #five, #six {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 12px;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#one {
+    top: 50px;
+    left: 25px;
+    animation-name: one;
+}
+
+#two, #three, #four, #five {
+    top: 190px;
+    left: 100px;
+}
+
+#two {
+    left: 145px;
+    animation-name: two;
+}
+
+#three {
+    left: 255px;
+    animation-name: three;
+}
+
+#four {
+    left: 365px;
+    animation-name: four;
+}
+
+#five {
+    left: 475px;
+    animation-name: five;
+}
+
+#six {
+    top: 320px;
+    left: 595px;
+    animation-name: six;
+}
+
+@keyframes one {
+    0% {
+        background-color: yellow;
+    }
+    20% {
+        background-color: purple;
+    }
+    40% {
+        background-color: deeppink;
+    }
+    60% {
+        background-color: red;
+    }
+    80% {
+        background-color: green;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+@keyframes two {
+    0% {
+        background-color: purple;
+    }
+    20% {
+        background-color: deeppink;
+    }
+    40% {
+        background-color: red;
+    }
+    60% {
+        background-color: green;
+    }
+    80% {
+        background-color: blue;
+    }
+    100% {
+        background-color: yellow;
+    }
+}
+
+@keyframes three {
+    0% {
+        background-color: deeppink;
+    }
+    20% {
+        background-color: red;
+    }
+    40% {
+        background-color: green;
+    }
+    60% {
+        background-color: blue;
+    }
+    80% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: purple;
+    }
+}
+
+@keyframes four {
+    0% {
+        background-color: red;
+    }
+    20% {
+        background-color: green;
+    }
+    40% {
+        background-color: blue;
+    }
+    60% {
+        background-color: yellow;
+    }
+    80% {
+        background-color: purple;
+    }
+    100% {
+        background-color: deeppink;
+    }
+}
+
+@keyframes five {
+    0% {
+        background-color: green;
+    }
+    20% {
+        background-color: blue;
+    }
+    40% {
+        background-color: yellow;
+    }
+    60% {
+        background-color: purple;
+    }
+    80% {
+        background-color: deeppink;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+@keyframes six {
+    0% {
+        background-color: blue;
+    }
+    20% {
+        background-color: yellow;
+    }
+    40% {
+        background-color: purple;
+    }
+    60% {
+        background-color: deeppink;
+    }
+    80% {
+        background-color: red;
+    }
+    100% {
+        background-color: green;
+    }
+}
