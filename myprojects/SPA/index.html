@@ -64,8 +64,8 @@
                 <form>
                     <div class="d-flex">
                         <input aria-label="Search" class="form-control me-2" placeholder="Search Customer"
-                               type="search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                               type="search" id="txtSearchCustomer">
+                        <button class="btn btn-outline-success" type="submit" id="btnSearchCustomer">Search</button>
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputCustomerId_1">Customer Id</label>
@@ -84,7 +84,7 @@
                     </div>
                     <button class="btn btn-primary mt-2" id="btn_custoomer_save" type="submit">Save</button>
                     <button class="btn btn-warning mt-2" type="submit" id="btn_customer_update">Update</button>
-                    <button class="btn btn-danger mt-2" type="submit">Delete</button>
+                    <button class="btn btn-danger mt-2" type="submit" id="btn_delete">Delete</button>
                 </form>
             </div>
         </div>
@@ -309,6 +309,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         src="assests/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assests/jQuery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
 <script src="assests/js/script.js"></script>
 </body>
 </html>

@@ -15,23 +15,24 @@ $("#order").click(function () {
 })
 
 
-
-
 //customer
 $("#exampleInputCustomerId_1").keydown(function (event) {
-    $("#btn_custoomer_save").prop('disabled', true);
+    // $("#btn_custoomer_save").prop('disabled', true);
+    setButton()
     if (event.key == "Shift") {
         $("#exampleInputCustomerName_1").focus();
     }
 });
 
 $("#exampleInputCustomerName_1").keydown(function (event) {
+    setButton()
     if (event.key == "Shift") {
         $("#exampleInputCustomerAddress_1").focus();
     }
 });
 
 $("#exampleInputCustomerAddress_1").keydown(function (event) {
+    setButton()
     if (event.key == "Shift") {
 
         //Disable previously tr binded function
@@ -39,19 +40,13 @@ $("#exampleInputCustomerAddress_1").keydown(function (event) {
 
         $("#exampleInputCustomerId_1").focus();
 
-        getCustomerDataAndSetRow();
+        getCustomerData();
+
+        loadAllCustomersIntoTable();
 
         clearCustomerInputFeild();
 
         clickCustomerTableRowAndGetdata();
-
-        // $("#btn_customer_update").click(function () {
-        //     $("#customer_Table>tr").off();
-        //     $("#customer_Table>tr").click(function () {
-        //         $(this).remove();
-        //         getCustomerDataAndSetRow();
-        //     });
-        // });
 
     }
 });
@@ -62,36 +57,109 @@ $("#btn_custoomer_save").click(function () {
 
     $("#exampleInputCustomerId_1").focus();
 
-    getCustomerDataAndSetRow();
+    getCustomerData();
+
+    loadAllCustomersIntoTable();
 
     clearCustomerInputFeild();
 
     clickCustomerTableRowAndGetdata();
 
-    // $("#btn_customer_update").click(function () {
-    //     $("#customer_Table>tr").off();
-    //     $("#customer_Table>tr").click(function () {
-    //         $(this).remove();
-    //         getCustomerDataAndSetRow();
-    //     });
-    // });
-
 });
 
-allCustomersValidation();
+$('#exampleInputCustomerId_1,#exampleInputCustomerName_1,#exampleInputCustomerAddress_1').on('keyup', function () {
+    allCustomersValidation();
+});
 
-function getCustomerDataAndSetRow() {
+function getCustomerData() {
 
     let custId = $("#exampleInputCustomerId_1").val(); //get first input field value
     let custName = $("#exampleInputCustomerName_1").val(); //get second input field value
     let custAdress = $("#exampleInputCustomerAddress_1").val(); //get third input field value
 
-    let row = "<tr><td>" + custId + "</td><td>" + custName + "</td><td>" + custAdress + "</td></tr>";
+    var customerObject = {
+        id: custId,
+        name: custName,
+        address: custAdress
+    };
 
-    //set the row
-    $("#customer_Table").append(row);
-
+    customerDB.push(customerObject);
 }
+
+function loadAllCustomersIntoTable() {
+    $("#customer_Table").empty();
+    for (var i of customerDB) {
+        /*create a html row*/
+        let row = "<tr><td>" + i.id + "</td><td>" + i.name + "</td><td>" + i.address + "</td></tr>";
+        //set the row
+        $("#customer_Table").append(row);
+    }
+}
+
+$("#btnSearchCustomer").click(function () {
+    var searchID = $("#txtSearchCustomer").val();
+
+    var response = searchCustomer(searchID);
+    if (response) {
+        $("#exampleInputCustomerId_1").val(response.id);
+        $("#exampleInputCustomerName_1").val(response.name);
+        $("#exampleInputCustomerAddress_1").val(response.address);
+    } else {
+        clearCustomerInputFeild();
+        alert("No Such a Customer");
+    }
+});
+
+function searchCustomer(id) {
+    for (let i = 0; i < customerDB.length; i++) {
+        if (customerDB[i].id == id) {
+            return customerDB[i];
+        }
+    }
+}
+
+$("#btn_customer_update").click(function () {
+    let custId = $("#exampleInputCustomerId_1").val(); //get first input field value
+    let custName = $("#exampleInputCustomerName_1").val(); //get second input field value
+    let custAdress = $("#exampleInputCustomerAddress_1").val(); //get third input field value
+
+    var customerObject = {
+        id: custId,
+        name: custName,
+        address: custAdress
+    };
+
+    for (let i = 0; i < customerDB.length; i++) {
+
+        if (customerDB[i].id == customerObject.id) {
+            customerDB[i].id = customerObject.id;
+            customerDB[i].name = customerObject.name;
+            customerDB[i].address = customerObject.address;
+
+            clearCustomerInputFeild();
+            loadAllCustomersIntoTable();
+            $("#txtSearchCustomer").val(null);
+            alert("updated customer");
+        }
+    }
+
+});
+
+$("#btn_delete").click(function () {
+    let custId = $("#exampleInputCustomerId_1").val();
+
+    for (let i = 0; i < customerDB.length; i++) {
+
+        if (customerDB[i].id == custId) {
+            customerDB[i].id = null;
+            customerDB[i].name = null;
+            customerDB[i].address = null;
+            // customerDB[i].remove();
+            $("#txtSearchCustomer").val(null);
+            loadAllCustomersIntoTable();
+        }
+    }
+});
 
 function clearCustomerInputFeild() {
     //clear the previous text in input filed
@@ -117,55 +185,46 @@ function clickCustomerTableRowAndGetdata() {
     });
 }
 
-function allCustomersValidation(){
-    $("#btn_custoomer_save").prop('disabled', true);
-
+function allCustomersValidation() {
     var regExCusID = /^(C-)[0-9]{3}$/;
     var regExCusName = /^[A-z ]{3,20}$/;
     var regExCusAddress = /^[A-z0-9/ ]{6,30}$/;
 
-    $("#exampleInputCustomerId_1").keyup(function () {
-        let input = $("#exampleInputCustomerId_1").val();
-        if (regExCusID.test(input)) {
-            $("#exampleInputCustomerId_1").css('border', '2px solid green');
-            $("#error_1").text("");
-        } else {
-            $("#exampleInputCustomerId_1").css('border', '2px solid red');
-            $("#error_1").text("Wrong format : C-001");
-        }
-    });
-    $("#exampleInputCustomerName_1").keyup(function () {
-        let input = $("#exampleInputCustomerName_1").val();
-        if (regExCusName.test(input)) {
+    var cusID = $("#exampleInputCustomerId_1").val();
+    if (regExCusID.test(cusID)) {
+        $("#exampleInputCustomerId_1").css('border', '2px solid green');
+        $("#error_1").text("");
+        var cusName = $("#exampleInputCustomerName_1").val();
+        if (regExCusName.test(cusName)) {
             $("#exampleInputCustomerName_1").css('border', '2px solid green');
             $("#error_2").text("");
+            var cusAddress = $("#exampleInputCustomerAddress_1").val();
+            if (regExCusAddress.test(cusAddress)) {
+                $("#exampleInputCustomerAddress_1").css('border', '2px solid green');
+                $("#error_3").text("");
+                $("#btn_custoomer_save").attr('disabled', false);
+            } else {
+                $("#exampleInputCustomerAddress_1").css('border', '2px solid red');
+                $("#error_3").text("Wrong format : 2331/1B Colombo");
+            }
         } else {
             $("#exampleInputCustomerName_1").css('border', '2px solid red');
             $("#error_2").text("Wrong format : Kamal Perera");
         }
-    });
-    $("#exampleInputCustomerAddress_1").keyup(function () {
-        let input = $("#exampleInputCustomerAddress_1").val();
-        if (regExCusAddress.test(input)) {
-            $("#exampleInputCustomerAddress_1").css('border', '2px solid green');
-            $("#error_3").text("");
-            $("#btn_custoomer_save").prop('disabled', false);
-        } else {
-            $("#exampleInputCustomerAddress_1").css('border', '2px solid red');
-            $("#error_3").text("Wrong format : 2331/1B Colombo");
-        }
-    });
+    } else {
+        $("#exampleInputCustomerId_1").css('border', '2px solid red');
+        $("#error_1").text("Wrong format : C-001");
+    }
 }
 
-
-
-
-
-
-
-
-
-
+function setButton() {
+    let b = allCustomersValidation();
+    if (b) {
+        $("#btn_custoomer_save").attr('disabled', false);
+    } else {
+        $("#btn_custoomer_save").attr('disabled', true);
+    }
+}
 
 
 //item
