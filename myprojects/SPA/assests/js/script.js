@@ -202,18 +202,22 @@ function allCustomersValidation() {
             if (regExCusAddress.test(cusAddress)) {
                 $("#exampleInputCustomerAddress_1").css('border', '2px solid green');
                 $("#error_3").text("");
-                $("#btn_custoomer_save").attr('disabled', false);
+                // $("#btn_custoomer_save").attr('disabled', false);
+                return true;
             } else {
                 $("#exampleInputCustomerAddress_1").css('border', '2px solid red');
                 $("#error_3").text("Wrong format : 2331/1B Colombo");
+                return false;
             }
         } else {
             $("#exampleInputCustomerName_1").css('border', '2px solid red');
             $("#error_2").text("Wrong format : Kamal Perera");
+            return false;
         }
     } else {
         $("#exampleInputCustomerId_1").css('border', '2px solid red');
         $("#error_1").text("Wrong format : C-001");
+        return false;
     }
 }
 
@@ -229,31 +233,37 @@ function setButton() {
 
 //item
 $("#exampleInputItemId_1").keydown(function (event) {
+    setItemButton()
     if (event.key == "Shift") {
         $("#exampleInputItemName_1").focus();
     }
 });
 
 $("#exampleInputItemName_1").keydown(function (event) {
+    setItemButton()
     if (event.key == "Shift") {
         $("#exampleInputItemPrice_1").focus();
     }
 });
 
 $("#exampleInputItemPrice_1").keydown(function (event) {
+    setItemButton()
     if (event.key == "Shift") {
         $("#exampleInputItemQuantity_1").focus();
     }
 });
 
 $("#exampleInputItemQuantity_1").keydown(function (event) {
+    setItemButton()
     if (event.key == "Shift") {
 
         $("#item_Table>tr").off("click");
         //focus first input field
         $("#exampleInputItemId_1").focus();
 
-        getItemDataAndSetRow();
+        getItemData();
+
+        loadAllItemsIntoTable();
 
         clearItemInputFeild();
 
@@ -262,12 +272,13 @@ $("#exampleInputItemQuantity_1").keydown(function (event) {
 });
 
 $("#btn_item_save").click(function () {
-    //Disable previously tr binded function
     $("#item_Table>tr").off("click");
     //focus first input field
     $("#exampleInputItemId_1").focus();
 
-    getItemDataAndSetRow();
+    getItemData();
+
+    loadAllItemsIntoTable();
 
     clearItemInputFeild();
 
@@ -275,27 +286,94 @@ $("#btn_item_save").click(function () {
 
 });
 
-function getItemDataAndSetRow() {
-    let itemID_2 = $("#exampleInputItemId_1").val(); //get first input field value
-    let itemName_2 = $("#exampleInputItemName_1").val(); //get second input field value
-    let itemPrice_2 = $("#exampleInputItemPrice_1").val(); //get third input field value
-    let itemQuantity_2 = $("#exampleInputItemQuantity_1").val(); //get fouth input field value
+$('#exampleInputItemId_1,#exampleInputItemName_1,#exampleInputItemPrice_1,#exampleInputItemQuantity_1').on('keyup', function () {
+    allItemsValidation();
+});
 
-    let row_2 = "<tr><td>" + itemID_2 + "</td><td>" + itemName_2 + "</td><td>" + itemPrice_2 + "</td><td>" + itemQuantity_2 + "</td></tr>";
+function allItemsValidation() {
+    var regExItemID = /^(I-)[0-9]{3}$/;
+    var regExItemName = /^[A-z ]{3,20}$/;
+    var regExItemPrice = /^[0-9 ]{1,5}$/;
+    var regExItemQty = /^[0-9]{1,5}$/;
 
-    //set the row
-    $("#item_Table").append(row_2);
+    var itemID = $("#exampleInputItemId_1").val();
+    if (regExItemID.test(itemID)) {
+        $("#exampleInputItemId_1").css('border', '2px solid green');
+        $("#error_4").text("");
+        var itemName = $("#exampleInputItemName_1").val();
+        if (regExItemName.test(itemName)) {
+            $("#exampleInputItemName_1").css('border', '2px solid green');
+            $("#error_5").text("");
+            var itemPrice = $("#exampleInputItemPrice_1").val();
+            if (regExItemPrice.test(itemPrice)) {
+                $("#exampleInputItemPrice_1").css('border', '2px solid green');
+                $("#error_6").text("");
+                var itemQty = $("#exampleInputItemQuantity_1").val();
+                if (regExItemQty.test(itemQty)) {
+                    $("#exampleInputItemQuantity_1").css('border', '2px solid green');
+                    $("#error_7").text("");
+                    // $("#btn_item_save").attr('disabled', false);
+                    return true;
+                } else {
+                    $("#exampleInputItemQuantity_1").css('border', '2px solid red');
+                    $("#error_7").text("Wrong format : xxxx");
+                    return false;
+                }
+            } else {
+                $("#exampleInputItemPrice_1").css('border', '2px solid red');
+                $("#error_6").text("Wrong format : xxxx");
+                return false;
+            }
+        } else {
+            $("#exampleInputItemName_1").css('border', '2px solid red');
+            $("#error_5").text("Wrong format : xxxxx");
+            return false;
+        }
+    } else {
+        $("#exampleInputItemId_1").css('border', '2px solid red');
+        $("#error_4").text("Wrong format : I-001");
+        return false;
+    }
+}
+
+function getItemData() {
+    let itemID = $("#exampleInputItemId_1").val(); //get first input field value
+    let itemName = $("#exampleInputItemName_1").val(); //get second input field value
+    let itemPrice = $("#exampleInputItemPrice_1").val(); //get third input field value
+    let itemQuantity = $("#exampleInputItemQuantity_1").val(); //get fouth input field value
+
+
+    var itemObject = {
+        id: itemID,
+        name: itemName,
+        price: itemPrice,
+        qty: itemQuantity
+    };
+
+    itemDB.push(itemObject);
+
+}
+
+function loadAllItemsIntoTable() {
+    $("#item_Table").empty();
+    for (var i of itemDB) {
+        /*create a html row*/
+        let row = "<tr><td>" + i.id + "</td><td>" + i.name + "</td><td>" + i.price + "</td><td>" + i.qty + "</td></tr>";
+        //set the row
+        $("#item_Table").append(row);
+    }
 }
 
 function clearItemInputFeild() {
-    //clear the previous text in input filed
-    $("#exampleInputItemId_1").val(" ");
-    $("#exampleInputItemName_1").val(" ");
-    $("#exampleInputItemPrice_1").val(" ");
-    $("#exampleInputItemQuantity_1").val(" ");
+    $("#exampleInputItemId_1").val(null);
+    $("#exampleInputItemName_1").val(null);
+    $("#exampleInputItemPrice_1").val(null);
+    $("#exampleInputItemQuantity_1").val(null);
 }
 
 function clickItemTableRowAndGetdata() {
+    $("#item_Table>tr").off();
+
     $("#item_Table>tr").click(function () {
 
         let itemID_1 = $(this).children(":eq(0)").text(); // select first td and get text
@@ -309,4 +387,82 @@ function clickItemTableRowAndGetdata() {
         $("#exampleInputItemPrice_1").val(itemPrice_1);
         $("#exampleInputItemQuantity_1").val(itemQuantity_1);
     });
+}
+
+$("#btnSearchItem").click(function () {
+    var searchItemID = $("#txtSearchItem").val();
+
+    var response = searchItem(searchItemID);
+    if (response) {
+        $("#exampleInputItemId_1").val(response.id);
+        $("#exampleInputItemName_1").val(response.name);
+        $("#exampleInputItemPrice_1").val(response.price);
+        $("#exampleInputItemQuantity_1").val(response.qty);
+    } else {
+        clearItemInputFeild();
+        alert("No Such a Item");
+    }
+});
+
+function searchItem(id) {
+    for (let i = 0; i < itemDB.length; i++) {
+        if (itemDB[i].id == id) {
+            return itemDB[i];
+        }
+    }
+}
+
+$("#btn_item_update").click(function () {
+    let itemId = $("#exampleInputItemId_1").val(); //get first input field value
+    let itemName = $("#exampleInputItemName_1").val(); //get second input field value
+    let itemPrice = $("#exampleInputItemPrice_1").val(); //get third input field value
+    let itemQty = $("#exampleInputItemQuantity_1").val(); //get third input field value
+
+    var itemObject = {
+        id: itemId,
+        name: itemName,
+        price: itemPrice,
+        qty: itemQty
+    };
+
+    for (let i = 0; i < itemDB.length; i++) {
+
+        if (itemDB[i].id == itemObject.id) {
+            itemDB[i].id = itemObject.id;
+            itemDB[i].name = itemObject.name;
+            itemDB[i].price = itemObject.price;
+            itemDB[i].qty = itemObject.qty;
+
+            clearItemInputFeild();
+            loadAllItemsIntoTable();
+            $("#txtSearchItem").val(null);
+            alert("updated item");
+        }
+    }
+
+});
+
+$("#btn_item_delete").click(function () {
+    let itemId = $("#exampleInputItemId_1").val();
+
+    for (let i = 0; i < itemDB.length; i++) {
+
+        if (itemDB[i].id == itemId) {
+            itemDB[i].id = null;
+            itemDB[i].name = null;
+            itemDB[i].price = null;
+            itemDB[i].qty = null;
+            $("#txtSearchItem").val(null);
+            loadAllItemsIntoTable();
+        }
+    }
+});
+
+function setItemButton() {
+    let b = allItemsValidation();
+    if (b) {
+        $("#btn_item_save").attr('disabled', false);
+    } else {
+        $("#btn_item_save").attr('disabled', true);
+    }
 }
