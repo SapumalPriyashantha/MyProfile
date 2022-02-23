@@ -60,7 +60,7 @@ function getCustomerData() {
     let custName = $("#exampleInputCustomerName_1").val(); //get second input field value
     let custAdress = $("#exampleInputCustomerAddress_1").val(); //get third input field value
 
-    var customer = new CustomerDTO(custId,custName,custAdress);
+    var customer = new CustomerDTO(custId, custName, custAdress);
 
     customerDB.push(customer);
 }
@@ -102,7 +102,7 @@ $("#btn_customer_update").click(function () {
     let custName = $("#exampleInputCustomerName_1").val(); //get second input field value
     let custAdress = $("#exampleInputCustomerAddress_1").val(); //get third input field value
 
-var customer = new CustomerDTO(custId,custName,custAdress);
+    var customer = new CustomerDTO(custId, custName, custAdress);
 
     for (let i = 0; i < customerDB.length; i++) {
 
@@ -126,7 +126,7 @@ $("#btn_delete").click(function () {
     for (let i = 0; i < customerDB.length; i++) {
 
         if (customerDB[i].id == custId) {
-            customerDB.splice(i,1);
+            customerDB.splice(i, 1);
             $("#txtSearchCustomer").val(null);
             loadAllCustomersIntoTable();
             clearCustomerInputFeild();
