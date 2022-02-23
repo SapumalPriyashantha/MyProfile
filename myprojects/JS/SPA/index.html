@@ -5,6 +5,10 @@
     <title>Assignment_12_css framework</title>
     <link href="assests/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <style>
         main {
             position: absolute;
@@ -168,33 +172,50 @@
                     <h3 class="fw-bold fst-italic">Invoice Details</h3>
                     <form>
                         <div>
-                            <label class="form-label" for="exampleInputOrderID_1">Order Id</label>
-                            <input aria-describedby="emailHelp" class="form-control" id="exampleInputOrderID_1"
-                                   type="email">
+                            <label class="form-label">Order Id</label>
+                            <label class="form-label ms-5 h4">O-000</label>
                         </div>
                         <div>
-                            <label class="form-label" for="exampleInputOrder_Date">Order Date</label>
-                            <div class="md-form md-outline input-with-post-icon datepicker" id="date-picker-example">
-                                <input class="form-control" id="exampleInputOrder_Date" placeholder="Select date"
-                                       type="text">
-                                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                            <label class="form-label">Order Date</label>
+                            <div class="input-group date" id="datepicker">
+                                <input class="form-control" type="text">
+                                <span class="input-group-append">
+                                  <span class="input-group-text bg-white d-block">
+                                     <i class="fa fa-calendar"></i></span></span>
                             </div>
                         </div>
+
+
+
+
                         <div>
                             <label class="form-label">Select Customer</label>
-                            <div class="dropdown">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        id="dropdownMenuButton1" type="button">
-                                    Select Customer
-                                </button>
-                                <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Kamal Perera</a></li>
-                                    <li><a class="dropdown-item" href="#">Nimal Shantha</a></li>
-                                    <li><a class="dropdown-item" href="#">Anil Jayashantha</a></li>
-                                </ul>
-                            </div>
+
+                                <div class="dropdown">
+                                    <label>Select Customer</label>
+                                    <ul id="dropdown_customer" >
+                                    <select class="combobox input-large form-control">
+<!--                                        <option value="" selected="selected">Type Planet name...</option>-->
+<!--                                        <option value="0">Mercury</option>-->
+<!--                                        <option value="1">Earth</option>-->
+<!--                                        <option value="2">Venus</option>-->
+<!--                                        <option value="3">Mars</option>-->
+<!--                                        <option value="4">Jupiter</option>-->
+                                    </select>
+                                    </ul>
+                                </div>
+
+<!--                            <div class="dropdown">-->
+<!--                                <ul id="dropdown_customer" >-->
+<!--                                    <select  >-->
+<!--                                    </select>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                         </div>
+
+
+
+
                         <div>
                             <label class="form-label" for="exampleInputCustomerID">Customer Id</label>
                             <input class="form-control" id="exampleInputCustomerID" type="password">
@@ -317,8 +338,19 @@
 
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
+<script src="controller/OrderController.js"></script>
 
 <script src="assests/js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#datepicker').datepicker();
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
 
 </body>
 </html>
