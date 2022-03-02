@@ -184,41 +184,16 @@
                                      <i class="fa fa-calendar"></i></span></span>
                             </div>
                         </div>
-
-
-
-
                         <div>
                             <label class="form-label">Select Customer</label>
 
-                                <div class="dropdown">
-                                    <label>Select Customer</label>
-                                    <ul id="dropdown_customer" >
-                                    <select class="combobox input-large form-control">
-<!--                                        <option value="" selected="selected">Type Planet name...</option>-->
-<!--                                        <option value="0">Mercury</option>-->
-<!--                                        <option value="1">Earth</option>-->
-<!--                                        <option value="2">Venus</option>-->
-<!--                                        <option value="3">Mars</option>-->
-<!--                                        <option value="4">Jupiter</option>-->
-                                    </select>
-                                    </ul>
-                                </div>
+                            <select class="form-select form-select-ls" id="dropdown_customer" aria-label=".form-select-lg example">
 
-<!--                            <div class="dropdown">-->
-<!--                                <ul id="dropdown_customer" >-->
-<!--                                    <select  >-->
-<!--                                    </select>-->
-<!--                                </ul>-->
-<!--                            </div>-->
+                            </select>
                         </div>
-
-
-
-
                         <div>
                             <label class="form-label" for="exampleInputCustomerID">Customer Id</label>
-                            <input class="form-control" id="exampleInputCustomerID" type="password">
+                            <input class="form-control" id="exampleInputCustomerID">
                         </div>
                     </form>
                 </div>
@@ -228,40 +203,27 @@
                 <form>
                     <div>
                         <label class="form-label">Select Item</label>
-                        <div class="dropdown">
-                            <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                    data-bs-toggle="dropdown"
-                                    id="dropdownMenuButton2" type="button">
-                                Select Item
-                            </button>
-                            <ul aria-labelledby="dropdownMenuButton2" class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Soya meet</a></li>
-                                <li><a class="dropdown-item" href="#">Milk powder</a></li>
-                                <li><a class="dropdown-item" href="#">Milk made</a></li>
-                            </ul>
-                        </div>
+                        <select class="form-select form-select-ls" id="dropdown_item" aria-label=".form-select-lg example">
+
+                        </select>
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputItem_Id_1">Item Id</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Id_1"
-                               type="email">
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Id_1">
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputItem_Price">Item Price</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Price"
-                               type="email">
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_Price">
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputItem_QTyOnHand">QTY On Hand</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_QTyOnHand"
-                               type="email">
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputItem_QTyOnHand">
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputOrder_QTy">Order QTY </label>
-                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputOrder_QTy"
-                               type="email">
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputOrder_QTy">
                     </div>
-                    <button class="btn btn-primary mt-2" type="submit">Add to Cart</button>
+                    <button class="btn btn-primary mt-2" id="save_order" type="submit">Add to Cart</button>
                 </form>
             </div>
             <div class="col mt-4">
@@ -296,28 +258,8 @@
                         <th scope="col">Total</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>I-001</td>
-                        <td>Soya meet</td>
-                        <td>Rs:200.00</td>
-                        <td>2</td>
-                        <td>Rs:400.00</td>
-                    </tr>
-                    <tr>
-                        <td>I-002</td>
-                        <td>Milk powder</td>
-                        <td>Rs:750.00</td>
-                        <td>5</td>
-                        <td>3750.00</td>
-                    </tr>
-                    <tr>
-                        <td>I-003</td>
-                        <td>Milk made</td>
-                        <td>Rs:175.00</td>
-                        <td>3</td>
-                        <td>Rs:525.00</td>
-                    </tr>
+                    <tbody id="order_table">
+
                     </tbody>
                 </table>
             </div>
@@ -335,9 +277,11 @@
 
 <script src="model/Customer.js"></script>
 <script src="model/Item.js"></script>
+<script src="model/Order.js"></script>
 
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
+
 <script src="controller/OrderController.js"></script>
 
 <script src="assests/js/script.js"></script>

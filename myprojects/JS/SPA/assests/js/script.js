@@ -12,5 +12,8 @@ $("#order").click(function () {
     $("#first_row").css("display", "none");
     $("#second_row").css("display", "none");
     $("#third_row").css("display", "block");
+
+    addCustomerdataIntodropDown();
+    addItemDataIntodropDown();
 })
 
