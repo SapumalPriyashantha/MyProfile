@@ -43,13 +43,40 @@ function getOrderData() {
     let item_qty = $("#exampleInputOrder_QTy").val();
     let item_total = item_price*item_qty;
 
-    var order = new OrderDTO(item_id, item_name, item_price,item_qty,item_total);
+    let response= searchItem(item_id);
+    if(response){
+        //         let currentQTY=response.qty;
+        // console.log(currentQTY);
+        // response.qty= currentQTY+item_qty;
+        // console.log(response.qty);
+        ///////////////////////////////////////////////////////////////
+        console.log(item_qty);
+        console.log(response.qty);
+        response.qty=response.qty + item_qty;
+        console.log(response.qty);
+        ///////////////////////////////////////////////////////
 
-    orderDB.push(order);
+                let currentTotal=response.total;
+        response.total= currentTotal+item_total;
+        console.log(response.total);
+    }else {
+        var cart = new CartDTO(item_id, item_name, item_price, item_qty, item_total);
+
+        cartDB.push(cart);
+    }
 }
+
+function searchItem(id) {
+    for (let i = 0; i < cartDB.length; i++) {
+        if (cartDB[i].id == id) {
+            return cartDB[i];
+        }
+    }
+}
+
 function loadAllOrderIntoTable() {
     $("#order_table").empty();
-    for (var i of orderDB) {
+    for (var i of cartDB) {
         /*create a html row*/
         let row = "<tr><td>" + i.id + "</td><td>" + i.name + "</td><td>" + i.price + "</td><td>" + i.qty + "</td><td>" + i.total + "</td></tr>";
         //set the row

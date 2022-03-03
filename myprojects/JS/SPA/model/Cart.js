@@ -1,4 +1,4 @@
-function OrderDTO(id,name,price,qty,total) {
+function CartDTO(id,name,price,qty,total) {
     this.id=id;
     this.name=name;
     this.price=price;
