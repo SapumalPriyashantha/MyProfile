@@ -1,7 +1,7 @@
-$( "#dropdown_customer" ).click(function() {
-    let name=$('#dropdown_customer option:selected').text();
-    for (var i in customerDB){
-        if(customerDB[i].name==name){
+$("#dropdown_customer").click(function () {
+    let name = $('#dropdown_customer option:selected').text();
+    for (var i in customerDB) {
+        if (customerDB[i].name == name) {
             $("#exampleInputCustomerID").val(customerDB[i].id);
         }
     }
@@ -10,24 +10,24 @@ $( "#dropdown_customer" ).click(function() {
 
 function addCustomerdataIntodropDown() {
     $("#dropdown_customer").empty();
-    for(var i in customerDB) {
-        $("#dropdown_customer").append('<option>'+customerDB[i].name+'</option>');
+    for (var i in customerDB) {
+        $("#dropdown_customer").append('<option>' + customerDB[i].name + '</option>');
     }
 
 }
 
 function addItemDataIntodropDown() {
     $("#dropdown_item").empty();
-    for(var i in itemDB) {
-        $("#dropdown_item").append('<option>'+itemDB[i].name+'</option>');
+    for (var i in itemDB) {
+        $("#dropdown_item").append('<option>' + itemDB[i].name + '</option>');
     }
 
 }
 
-$( "#dropdown_item" ).click(function() {
-    let item_name=$('#dropdown_item option:selected').text();
-    for (var i in itemDB){
-        if(itemDB[i].name==item_name){
+$("#dropdown_item").click(function () {
+    let item_name = $('#dropdown_item option:selected').text();
+    for (var i in itemDB) {
+        if (itemDB[i].name == item_name) {
             $("#exampleInputItem_Id_1").val(itemDB[i].id);
             $("#exampleInputItem_Price").val(itemDB[i].price);
             $("#exampleInputItem_QTyOnHand").val(itemDB[i].qty);
@@ -41,28 +41,34 @@ function getOrderData() {
     let item_name = $("#dropdown_item").val();
     let item_price = $("#exampleInputItem_Price").val();
     let item_qty = $("#exampleInputOrder_QTy").val();
-    let item_total = item_price*item_qty;
+    let item_QTYOnHand = $("#exampleInputItem_QTyOnHand").val();
+    let item_total = item_price * item_qty;
 
-    let response= searchItem(item_id);
-    if(response){
-        //         let currentQTY=response.qty;
-        // console.log(currentQTY);
-        // response.qty= currentQTY+item_qty;
-        // console.log(response.qty);
-        ///////////////////////////////////////////////////////////////
-        console.log(item_qty);
-        console.log(response.qty);
-        response.qty=response.qty + item_qty;
-        console.log(response.qty);
-        ///////////////////////////////////////////////////////
+    if ((+item_qty) < (+item_QTYOnHand)) {
+        let response = searchItem(item_id);
+        if (response) {
+            let current_qty = response.qty;
+            let currentTotal = response.total;
+            console.log(cartDB);
+            if ((+item_QTYOnHand) > (+current_qty) + (+item_qty)) {
+                console.log(current_qty + item_qty);
+                for (let i = 0; i < cartDB.length; i++) {
+                    if (cartDB[i].id == response.id) {
+                        cartDB.splice(i, 1);
 
-                let currentTotal=response.total;
-        response.total= currentTotal+item_total;
-        console.log(response.total);
-    }else {
-        var cart = new CartDTO(item_id, item_name, item_price, item_qty, item_total);
-
-        cartDB.push(cart);
+                        var cart = new CartDTO(item_id, item_name, item_price, (+current_qty) + (+item_qty), (+currentTotal) + (+item_total));
+                        cartDB.push(cart);
+                    }
+                }
+            } else {
+                alert("Quantity size is insufficient for order 2");
+            }
+        } else {
+            var cart = new CartDTO(item_id, item_name, item_price, item_qty, item_total);
+            cartDB.push(cart);
+        }
+    } else {
+        alert("Quantity size is insufficient for order 1");
     }
 }
 
