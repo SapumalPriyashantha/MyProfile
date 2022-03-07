@@ -15,5 +15,6 @@ $("#order").click(function () {
 
     addCustomerdataIntodropDown();
     addItemDataIntodropDown();
+    generateOrderId();
 })
 

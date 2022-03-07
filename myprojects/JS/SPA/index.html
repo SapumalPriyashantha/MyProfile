@@ -173,7 +173,7 @@
                     <form>
                         <div>
                             <label class="form-label">Order Id</label>
-                            <label class="form-label ms-5 h4">O-000</label>
+                            <input class="form-control" id="orderId">
                         </div>
                         <div>
                             <label class="form-label">Order Date</label>
@@ -230,17 +230,16 @@
                 <form>
                     <div>
                         <label class="form-label" for="exampleInputTotal_price">Total Price :</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputTotal_price"
-                               type="email">
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputTotal_price">
                     </div>
                     <div>
                         <label class="form-label" for="exampleInputCash">Cash :</label>
-                        <input class="form-control" id="exampleInputCash" type="password">
+                        <input class="form-control" id="exampleInputCash">
                     </div>
-                    <button class="btn btn-primary mt-4" type="submit">Purchase</button>
+                    <button class="btn btn-primary mt-4" id="purchase" type="submit">Purchase</button>
                     <div>
                         <label class="form-label mt-4" for="exampleInputRemaining">Remaining :</label>
-                        <input class="form-control" id="exampleInputRemaining" type="password">
+                        <input class="form-control" id="exampleInputRemaining">
                     </div>
                 </form>
             </div>
@@ -278,6 +277,8 @@
 <script src="model/Customer.js"></script>
 <script src="model/Item.js"></script>
 <script src="model/Cart.js"></script>
+<script src="model/Orders.js"></script>
+<script src="model/OrderDetails.js"></script>
 
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
